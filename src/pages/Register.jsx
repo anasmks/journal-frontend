@@ -56,7 +56,7 @@ const Register = () => {
       showToast('Account created! Please sign in.', 'success');
       navigate('/login');
     } catch (err) {
-      const msg = err.response?.data?.message || 'Registration failed. Try again.';
+      const msg = err.response?.data?.message || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Registration failed. Try again.');
       showToast(msg, 'error');
     } finally {
       setSubmitting(false);

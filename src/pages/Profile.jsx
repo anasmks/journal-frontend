@@ -46,7 +46,7 @@ const Profile = () => {
       logout();
       navigate('/login');
     } catch (err) {
-      const msg = err.response?.data || 'Update failed';
+      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Update failed');
       showToast(msg, 'error');
     } finally {
       setSubmitting(false);

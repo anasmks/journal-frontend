@@ -40,7 +40,7 @@ const CreateJournal = () => {
       showToast('Journal entry created!', 'success');
       navigate('/journals');
     } catch (err) {
-      const msg = err.response?.data || 'Failed to create journal entry';
+      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Failed to create journal entry');
       showToast(msg, 'error');
     } finally {
       setSubmitting(false);

@@ -60,7 +60,7 @@ const EditJournal = () => {
       showToast('Journal entry updated!', 'success');
       navigate('/journals');
     } catch (err) {
-      const msg = err.response?.data || 'Failed to update journal entry';
+      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Failed to update journal entry');
       showToast(msg, 'error');
     } finally {
       setSubmitting(false);

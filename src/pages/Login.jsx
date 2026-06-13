@@ -27,7 +27,7 @@ const Login = () => {
       showToast('Welcome back!', 'success');
       navigate('/dashboard', { replace: true });
     } catch (err) {
-      const msg = err.response?.data || 'Login failed. Check your credentials.';
+      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Login failed. Check your credentials.');
       showToast(msg, 'error');
     } finally {
       setSubmitting(false);
