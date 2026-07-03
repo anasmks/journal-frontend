@@ -38,16 +38,16 @@ const LandingNavbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 lg:h-20">
+        <div className="flex items-center justify-between h-18 lg:h-20 pt-1 md:pt-0">
           {/* Logo */}
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-3 group"
           >
-            <div className="relative w-9 h-9 rounded-xl overflow-hidden ring-2 ring-white/10 group-hover:ring-[#6c63ff]/40 transition-all duration-300">
+            <div className="relative w-7 h-7 sm:w-9 sm:h-9 rounded-xl overflow-hidden ring-2 ring-white/10 group-hover:ring-[#6c63ff]/40 transition-all duration-300">
               <img
-                src="/journal-logo.png"
+                src="/logo.png"
                 alt="JournalApp"
                 className="w-full h-full object-cover"
               />
@@ -127,7 +127,7 @@ const LandingNavbar = () => {
               <Link
                 to="/register"
                 onClick={() => setMobileOpen(false)}
-                className="block px-4 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-[#6c63ff] to-[#5a52d5] text-center mt-2"
+                className="block w-full px-4 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-[#6c63ff] to-[#5a52d5] text-center mt-2"
               >
                 Get Started
               </Link>

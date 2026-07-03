@@ -18,7 +18,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.error) {
       return (
-        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0f] p-8">
+        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0f] p-4 sm:p-8">
           <div className="max-w-lg w-full p-6 rounded-2xl bg-white/[0.04] border border-white/[0.06]">
             <h2 className="text-xl font-bold text-red-400 mb-3">Something went wrong</h2>
             <pre className="text-sm text-gray-300 bg-black/30 p-4 rounded-lg overflow-auto max-h-60 border border-white/[0.06]">

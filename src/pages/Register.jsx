@@ -79,7 +79,7 @@ const Register = () => {
           <p className="text-gray-500 mt-2">Start your journaling journey</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass-card p-8 space-y-4">
+        <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-400 mb-2">
               Username <span className="text-red-400">*</span>

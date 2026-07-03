@@ -58,7 +58,7 @@ const JournalList = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0f] pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-6 animate-slideUp">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 animate-slideUp">
           <div>
             <h1 className="text-3xl font-bold text-white">My Journals</h1>
             <p className="text-gray-500 mt-2">
@@ -67,7 +67,7 @@ const JournalList = () => {
           </div>
           <Link
             to="/create"
-            className="glass-btn flex items-center gap-2"
+            className="glass-btn flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

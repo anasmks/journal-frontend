@@ -136,7 +136,7 @@ const Dashboard = () => {
         >
           {/* Greeting */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                   Hi, {capitalizedName}
@@ -222,17 +222,17 @@ const Dashboard = () => {
           </motion.div>
 
           {/* Quick actions */}
-          <motion.div variants={itemVariants} className="flex gap-4 mb-10">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10">
             <Link
               to="/create"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#6c63ff] to-[#5a52d5] hover:from-[#7b73ff] hover:to-[#6c63ff] transition-all duration-300 shadow-lg shadow-[#6c63ff]/20"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#6c63ff] to-[#5a52d5] hover:from-[#7b73ff] hover:to-[#6c63ff] transition-all duration-300 shadow-lg shadow-[#6c63ff]/20 w-full sm:w-auto"
             >
               <HiPencil className="w-5 h-5" />
               New Entry
             </Link>
             <Link
               to="/journals"
-              className="px-6 py-3 rounded-xl text-sm font-medium text-gray-300 border border-white/[0.08] hover:bg-white/[0.05] hover:text-white hover:border-white/[0.15] transition-all duration-300"
+              className="px-6 py-3 rounded-xl text-sm font-medium text-gray-300 border border-white/[0.08] hover:bg-white/[0.05] hover:text-white hover:border-white/[0.15] transition-all duration-300 w-full sm:w-auto text-center"
             >
               <HiViewList className="w-5 h-5 inline mr-1.5 -mt-0.5" />
               View All

@@ -74,7 +74,7 @@ const Profile = () => {
           <p className="text-gray-500 mt-2">Manage your account settings</p>
         </div>
 
-        <div className="glass-card p-8 mb-6 animate-slideUp">
+        <div className="glass-card p-5 sm:p-6 md:p-8 mb-6 animate-slideUp">
           <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/5">
             <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#6c63ff] to-[#a78bfa] flex items-center justify-center text-white font-bold text-2xl">
               {user?.userName?.charAt(0)?.toUpperCase() || 'U'}
@@ -133,7 +133,7 @@ const Profile = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="glass-btn flex items-center gap-2"
+              className="glass-btn flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               {submitting ? (
                 <LoadingSpinner size="sm" />
@@ -144,14 +144,14 @@ const Profile = () => {
           </form>
         </div>
 
-        <div className="glass-card p-8 animate-slideUp border-red-500/20">
+        <div className="glass-card p-5 sm:p-6 md:p-8 animate-slideUp border-red-500/20">
           <h3 className="text-lg font-semibold text-red-400 mb-2">Danger Zone</h3>
           <p className="text-sm text-gray-500 mb-4">
             Permanently delete your account and all journal entries. This action cannot be undone.
           </p>
           <button
             onClick={handleDelete}
-            className="glass-btn-danger"
+            className="glass-btn-danger w-full sm:w-auto"
           >
             Delete Account
           </button>

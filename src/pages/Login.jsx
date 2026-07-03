@@ -52,7 +52,7 @@ const Login = () => {
           <p className="text-gray-500 mt-2">Sign in to your journal</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-400 mb-2">
               Username

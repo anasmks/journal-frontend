@@ -55,7 +55,7 @@ const CreateJournal = () => {
           <p className="text-gray-500 mt-2">Capture your thoughts and reflections</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6 animate-slideUp">
+        <form onSubmit={handleSubmit} className="glass-card p-5 sm:p-6 md:p-8 space-y-6 animate-slideUp">
           <div>
             <label className="block text-sm font-medium text-gray-400 mb-2">
               Title <span className="text-red-400">*</span>
@@ -79,7 +79,7 @@ const CreateJournal = () => {
               value={formData.content}
               onChange={handleChange}
               rows={10}
-              className="glass-input resize-y min-h-[200px]"
+              className="glass-input resize-y min-h-[150px] sm:min-h-[200px]"
               placeholder="Write your thoughts here..."
             />
           </div>
@@ -106,11 +106,11 @@ const CreateJournal = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <button
               type="submit"
               disabled={submitting}
-              className="glass-btn flex items-center gap-2"
+              className="glass-btn flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               {submitting ? (
                 <LoadingSpinner size="sm" />
@@ -126,7 +126,7 @@ const CreateJournal = () => {
             <button
               type="button"
               onClick={() => navigate('/journals')}
-              className="glass-btn-outline"
+              className="glass-btn-outline w-full sm:w-auto"
             >
               Cancel
             </button>

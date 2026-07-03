@@ -23,11 +23,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 pt-1 md:pt-0">
           {/* Logo */}
           <Link to="/dashboard" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg overflow-hidden ring-2 ring-white/10 group-hover:ring-[#6c63ff]/40 transition-all duration-300">
-              <img src="/journal-logo.png" alt="JournalApp" className="w-full h-full object-cover" />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg overflow-hidden ring-2 ring-white/10 group-hover:ring-[#6c63ff]/40 transition-all duration-300">
+              <img src="/logo.png" alt="JournalApp" className="w-full h-full object-cover" />
             </div>
             <span className="text-white font-semibold text-lg hidden sm:block tracking-tight">Journal<span className="text-[#6c63ff]">App</span></span>
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden text-gray-400 hover:text-white p-2"
+              className="md:hidden text-gray-400 hover:text-white p-3"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (

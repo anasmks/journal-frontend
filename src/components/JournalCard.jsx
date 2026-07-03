@@ -5,7 +5,7 @@ const JournalCard = ({ journal, onDelete }) => {
   const sentimentColor = getSentimentColor(journal.sentiment);
 
   return (
-    <div className="glass-card p-6 animate-fadeIn">
+    <div className="glass-card p-4 sm:p-6 animate-fadeIn">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-semibold text-white truncate">
@@ -45,13 +45,13 @@ const JournalCard = ({ journal, onDelete }) => {
         <div className="flex gap-2">
           <Link
             to={`/edit/${journal.id}`}
-            className="glass-btn-outline !py-1.5 !px-4 !text-xs"
+            className="glass-btn-outline !py-2 !px-4 !text-xs"
           >
             View
           </Link>
           <button
             onClick={() => onDelete(journal.id)}
-            className="glass-btn-danger !py-1.5 !px-4 !text-xs"
+            className="glass-btn-danger !py-2 !px-4 !text-xs"
           >
             Delete
           </button>

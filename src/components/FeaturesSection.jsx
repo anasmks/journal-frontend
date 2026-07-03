@@ -62,10 +62,6 @@ const cardVariants = {
 const FeaturesSection = () => {
   return (
     <section id="features" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#6c63ff]/5 blur-[150px]" />
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -120,8 +116,7 @@ const FeaturesSection = () => {
                 {feature.description}
               </p>
 
-              {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-white/[0.02] to-transparent" />
+              
             </motion.div>
           ))}
         </motion.div>

@@ -8,7 +8,6 @@ const timeline = [
     time: 'Start your day',
     description: 'Set intentions and capture the stillness of the morning. Record dreams, plan your day, or simply sit with your thoughts as the world wakes up.',
     gradient: 'from-[#f59e0b] to-[#fbbf24]',
-    glow: 'rgba(245,158,11,0.15)',
     delay: 0.1,
   },
   {
@@ -17,7 +16,6 @@ const timeline = [
     time: 'Throughout the day',
     description: 'Jot down ideas, memorable conversations, and moments of inspiration as they happen. Keep a living record of your day in motion.',
     gradient: 'from-[#6c63ff] to-[#a78bfa]',
-    glow: 'rgba(108,99,255,0.15)',
     delay: 0.25,
   },
   {
@@ -26,7 +24,6 @@ const timeline = [
     time: 'Wind down',
     description: 'Unwind by reviewing your day with gentle prompts. What went well? What did you learn? Let gratitude ground your evening routine.',
     gradient: 'from-[#06b6d4] to-[#22d3ee]',
-    glow: 'rgba(6,182,212,0.15)',
     delay: 0.4,
   },
   {
@@ -35,7 +32,6 @@ const timeline = [
     time: 'Over time',
     description: 'Watch your story unfold with trends and insights. See how your mood evolves, what themes emerge, and how far you have come.',
     gradient: 'from-[#10b981] to-[#34d399]',
-    glow: 'rgba(16,185,129,0.15)',
     delay: 0.55,
   },
 ];
@@ -43,11 +39,6 @@ const timeline = [
 const ExperienceSection = () => {
   return (
     <section id="experience" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#a78bfa]/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#06b6d4]/5 blur-[120px]" />
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -120,7 +111,7 @@ const ExperienceSection = () => {
                     className="w-5 h-5 rounded-full border-2 border-[#0a0a0f] shadow-lg"
                     style={{
                       background: `linear-gradient(135deg, ${item.gradient.replace('from-', '').split(' ')[0]}, ${item.gradient.replace('to-', '').split(' ')[1]})`,
-                      boxShadow: `0 0 20px ${item.glow}`,
+                      boxShadow: 'none',
                     }}
                   />
                 </div>
@@ -132,19 +123,6 @@ const ExperienceSection = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-16 lg:mt-20"
-        >
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-            <div className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-            <span className="text-sm text-gray-400">Join <span className="text-white font-medium">10,000+</span> journalers already writing</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

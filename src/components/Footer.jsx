@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HiHeart } from 'react-icons/hi';
 import { FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const footerLinks = [
@@ -13,24 +12,7 @@ const footerLinks = [
       { label: 'Changelog', href: '#' },
     ],
   },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Contact', href: '#' },
-    ],
-  },
-  {
-    title: 'Support',
-    links: [
-      { label: 'Help Center', href: '#' },
-      { label: 'Privacy', href: '#' },
-      { label: 'Terms', href: '#' },
-      { label: 'Status', href: '#' },
-    ],
-  },
+
 ];
 
 const socialLinks = [
@@ -50,22 +32,14 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="col-span-2 lg:col-span-2"
+            className="col-span-2 lg:col-span-2 text-center sm:text-left"
           >
-            <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg overflow-hidden ring-2 ring-white/10">
-                <img src="/journal-logo.png" alt="JournalApp" className="w-full h-full object-cover" />
-              </div>
-              <span className="text-white font-semibold text-lg">
-                Journal<span className="text-[#6c63ff]">App</span>
-              </span>
-            </Link>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-500 leading-relaxed max-w-sm mx-auto sm:mx-0">
               Your private digital journal for capturing memories, tracking emotions, and reflecting on life's journey.
             </p>
 
             {/* Social links */}
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center justify-center sm:justify-start gap-3 mt-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -87,6 +61,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="md:col-span-2 md:text-center lg:col-span-1 lg:text-left lg:col-start-5"
             >
               <h4 className="text-sm font-semibold text-white mb-4">{column.title}</h4>
               <ul className="space-y-3">
@@ -121,12 +96,9 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <p className="text-sm text-gray-600 text-center">
               &copy; {new Date().getFullYear()} JournalApp. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-600 flex items-center gap-1.5">
-              Made with <HiHeart className="text-red-400" size={14} /> by JournalApp Team
             </p>
           </div>
         </div>
