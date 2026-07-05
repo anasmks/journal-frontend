@@ -98,7 +98,7 @@ const HeroSection = () => {
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06]">
                 <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 rounded-lg overflow-hidden">
-                    <img src="/dashboard.png" alt="Dashboard" className="w-full h-full object-cover" />
+                    <img src="/mini-dash.png" alt="Dashboard" className="w-full h-full object-cover" />
                   </div>
                   <span className="text-sm font-medium text-white/80">Your Dashboard</span>
                 </div>

@@ -29,7 +29,6 @@ const Navbar = () => {
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg overflow-hidden ring-2 ring-white/10 group-hover:ring-[#6c63ff]/40 transition-all duration-300">
               <img src="/logo.png" alt="JournalApp" className="w-full h-full object-cover" />
             </div>
-            <span className="text-white font-semibold text-lg hidden sm:block tracking-tight">Journal<span className="text-[#6c63ff]">App</span></span>
           </Link>
 
           {/* Desktop nav */}

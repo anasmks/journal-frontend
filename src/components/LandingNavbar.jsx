@@ -52,9 +52,6 @@ const LandingNavbar = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-white font-semibold text-lg tracking-tight">
-              Journal<span className="text-[#6c63ff]">App</span>
-            </span>
           </Link>
 
           {/* Desktop nav */}
