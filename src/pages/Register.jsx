@@ -64,7 +64,7 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0a0a0f] px-4">
+    <div className="min-h-screen flex items-start sm:items-center justify-center bg-[#0a0a0f] px-4 pt-14 sm:pt-24 pb-12">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-[#6c63ff] opacity-10 blur-3xl" />
         <div className="absolute -bottom-40 -right-40 w-80 h-80 rounded-full bg-[#a78bfa] opacity-10 blur-3xl" />
@@ -72,10 +72,10 @@ const Register = () => {
 
       <div className="w-full max-w-md relative animate-slideUp">
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-xl overflow-hidden mx-auto mb-4 ring-2 ring-white/10">
-            <img src="/register.png" alt="Register" className="w-full h-full object-cover" />
+          <div className="relative w-16 h-16 rounded-2xl overflow-hidden mx-auto mb-4 ring-2 ring-[#6c63ff]/30 shadow-lg shadow-[#6c63ff]/10">
+            <img src="/sign-up.png" alt="Register" className="w-full h-full object-cover" />
           </div>
-          <h1 className="text-2xl font-bold text-white">Create Account</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white">Create Account</h1>
           <p className="text-gray-500 mt-2">Start your journaling journey</p>
         </div>
 
