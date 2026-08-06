@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiSearch } from 'react-icons/hi';
 import journalService from '../services/journalService';
 import { useToast } from '../hooks/useToast';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 import JournalCard from '../components/JournalCard';
 
@@ -18,7 +19,7 @@ const JournalList = () => {
         const data = await journalService.getAll();
         setJournals(Array.isArray(data) ? data : []);
       } catch (err) {
-        showToast('Failed to load journals', 'error');
+        showToast(getApiErrorMessage(err, 'Failed to load journals'), 'error');
       } finally {
         setLoading(false);
       }

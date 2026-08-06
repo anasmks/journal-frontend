@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { HiSparkles } from 'react-icons/hi';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Register = () => {
@@ -56,8 +57,7 @@ const Register = () => {
       showToast('Account created! Please sign in.', 'success');
       navigate('/login');
     } catch (err) {
-      const msg = err.response?.data?.message || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Registration failed. Try again.');
-      showToast(msg, 'error');
+      showToast(getApiErrorMessage(err, 'Registration failed. Try again.'), 'error');
     } finally {
       setSubmitting(false);
     }

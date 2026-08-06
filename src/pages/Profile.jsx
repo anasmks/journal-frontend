@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
 import userService from '../services/userService';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Profile = () => {
@@ -46,8 +47,7 @@ const Profile = () => {
       logout();
       navigate('/login');
     } catch (err) {
-      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Update failed');
-      showToast(msg, 'error');
+      showToast(getApiErrorMessage(err, 'Update failed'), 'error');
     } finally {
       setSubmitting(false);
     }
@@ -62,7 +62,7 @@ const Profile = () => {
       logout();
       navigate('/login');
     } catch (err) {
-      showToast('Failed to delete account', 'error');
+      showToast(getApiErrorMessage(err, 'Failed to delete account'), 'error');
     }
   };
 

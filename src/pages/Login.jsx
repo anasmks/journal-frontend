@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Login = () => {
@@ -27,8 +28,7 @@ const Login = () => {
       showToast('Welcome back!', 'success');
       navigate('/dashboard', { replace: true });
     } catch (err) {
-      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Login failed. Check your credentials.');
-      showToast(msg, 'error');
+      showToast(getApiErrorMessage(err, 'Login failed. Check your credentials.'), 'error');
     } finally {
       setSubmitting(false);
     }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import journalService from '../services/journalService';
 import { useToast } from '../hooks/useToast';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const sentiments = ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'NEUTRAL', 'ANXIOUS', 'GRATEFUL', 'HOPEFUL'];
@@ -28,7 +29,7 @@ const EditJournal = () => {
           sentiment: data.sentiment || '',
         });
       } catch (err) {
-        showToast('Failed to load journal entry', 'error');
+        showToast(getApiErrorMessage(err, 'Failed to load journal entry'), 'error');
         navigate('/journals');
       } finally {
         setLoading(false);
@@ -60,8 +61,7 @@ const EditJournal = () => {
       showToast('Journal entry updated!', 'success');
       navigate('/journals');
     } catch (err) {
-      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Failed to update journal entry');
-      showToast(msg, 'error');
+      showToast(getApiErrorMessage(err, 'Failed to update journal entry'), 'error');
     } finally {
       setSubmitting(false);
     }

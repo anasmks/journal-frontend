@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import journalService from '../services/journalService';
 import { useToast } from '../hooks/useToast';
+import { getApiErrorMessage } from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const sentiments = ['HAPPY', 'SAD', 'ANGRY', 'EXCITED', 'NEUTRAL', 'ANXIOUS', 'GRATEFUL', 'HOPEFUL'];
@@ -40,8 +41,7 @@ const CreateJournal = () => {
       showToast('Journal entry created!', 'success');
       navigate('/journals');
     } catch (err) {
-      const msg = err.response?.data || (err.code === 'ERR_NETWORK' ? 'Unable to connect to server. Please try again later.' : 'Failed to create journal entry');
-      showToast(msg, 'error');
+      showToast(getApiErrorMessage(err, 'Failed to create journal entry'), 'error');
     } finally {
       setSubmitting(false);
     }
